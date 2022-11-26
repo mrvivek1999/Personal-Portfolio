@@ -1,0 +1,684 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<div class="manu" id="Home">
+    <div class="content">
+      <h4>Hello, my name is</h4>
+      <h1>Vivek Baj<span>pai</span></h1>
+      <h3>I'am a Django Developer</h3>
+      <div class="newslatter">
+        <form>
+          <input type="email" name="email" id="mail" placeholder="Enter Your Email">
+          <input type="submit" name="submit" value="Lets Start with me">
+        </form>
+      </div>
+    </div>
+    <div class="links">
+      <form>
+        <button><i class="fa-brands fa-facebook-f"></i></button>
+        <button><i class="fa-brands fa-instagram"></i></button>
+        <button><i class="fa-brands fa-github"></i></button>
+        <button><i class="fa-brands fa-linkedin-in"></i></button>
+        <button><i class="fa-brands fa-twitter"></i></button>
+      </form>
+    </div>
+</div>
+<!---about section start-->
+<section class="about" id="About">
+  <!--about head-->
+  <div class="about-head" >
+    <h5>AB<span>OUT</span></h5>
+    <P>"Let me introduce myself"</P>
+  </div>
+  <!--about image-->
+  <div class="about-image">
+    <div class="image">
+     <img src="/media/images/mypic.jpg" alt="image">
+    </div>
+    <!--about image text-->
+    <div class="image-text">
+     <p>"Lad with a <span>million</span> dreams"</p>
+    </div>
+  </div>
+<div class="main">
+  <div class="about-text">
+    <h5>PROFILE</h5>
+    <p>I am a Django web devlepoer. I can provide clean code and pixal perfect design.
+      I also make the website more and more interactive with web tools.
+      My prime focus to provide simple and easy to use UI.
+    </p>
+    <h5>FULLNAME:</h5>
+    <p>Vivek Bajpai</p>
+    <h5>BIRTH DATE:</h5>
+    <p>July 5th,1999</p>
+    <h5>WEBSITE:</h5>
+    <p><a href="#">https://www.google.com</a></p>
+    <h5>EMAIL:</h5>
+    <p>bajpaivivek833@gmail.com</p>
+</div>
+  <div class="about-text">
+    <h5>SKILLS</h5>
+    <h6>Languages:</h6>
+    <h6>English:</h6>
+    <p>Read,Write,Speak : Native</p>
+    <h6>Hindi:</h6>
+    <p>Read,Write,Speak : Native</p>
+    <h5>HTML & CSS</h5>
+    <hr>
+    <h5>PYTHON</h5>
+    <hr>
+    <h5>DJANGO</h5>
+    <hr>
+    <h5>VS CODE</h5>
+    <hr>
+  </div>
+</div>
+<div class="download-btn">
+  <a href=""><button><i class="fa-solid fa-download"></i> DOWNLOAD CV</button></a>
+</div>
+</section>
+<!--resume section start-->
+<div class="resume" id="Resume">
+  <div class="title">
+    <h2>RES<span>UME</span></h2>
+    <p>"More of my Credentials"</p>
+  </div>
+  <div class="resume-head">
+      <h5>Education</h5>
+  </div>
+  <div class="box">
+    <div class="edu-name">
+      <h6>Bachelor's Degree</h6>
+      <p>july 2018 - july 2021</p>
+      <h6>Schooling</h6>
+      <p>2002-2016</p>
+    </div>
+    <div class="edu-icon">
+      <i class="fa-solid fa-school"></i>
+      <div class="vl"> </div>
+      <i class="fa-solid fa-school"></i>
+      <div class="vl"></div>
+    </div>
+    <div class="edu-details">
+      <h6>City College Of Mangement</h6>
+      <hr>
+      <p>Completed my Bachelor's Degree in Computer Applecation(BCA)</p>
+      <h6>Formative Day High School </h6>
+      <hr>
+      <p>Comleted my schooling through Uttar Pradesh Board(UP Board) at 
+        Formative Day High School,Lucknow -Uttar Pradesh.
+      </p>
+    </div>
+  </div>
+</div>
+<!--portfolio section start-->
+<div class="portfolio" id="Portfolio">
+  <div class="port-title">
+    <h5>PORT<span>FOLIO</span></h5>
+    <h6>Check Out Some of My Projects</h6>
+    <p>"These Projects have helped me develop my skills and understand the Industry better"</p>
+  </div>
+  
+  {% for item in Project %}
+    
+    
+  <div class="port-project">
+    <div class="row-first">
+      <a href="{% url 'project_view' %}"><img src="{{item.image.url}}" alt="project1 image"></a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<!--contact us section start-->
+<div class="contact" id="Contact">
+  <div class="cont-title">
+    <h4>CONT<span>ACT</span></h4>
+    <h6>"I'd Love To Hear From You."</h6>
+    <p>Feel free to Contact Me:</p>
+  </div>
+  <div class="cont-form">
+    <form id="cont-form-id">
+      <input type="text" name="name" id="name" placeholder="Name" size="50" ><br>
+      <input type="email" name="email" id="email" placeholder="Email" size="50"><br>
+      <input type="text" name="subject" id="subject" placeholder="Subject" size="100"><br>
+      <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea><br>
+      <input type="Submit" id="submit" value="SUBMIT">
+    </form>
+  </div>
+  <div class="cont-detales">
+    <div class="location">
+      <i class="fa-solid fa-location fa-2x"></i>
+      <h5>Location</h5>
+      <p>Gomti Nagar, Lucknow,
+        Uttar Pradesh(India)-226010
+      </p>
+    </div>
+    <div class="email">
+      <i class="fa-regular fa-envelope fa-2x"></i>
+      <h5>Email Address</h5>
+      <p>bajpaivivek833@gmail.com</p>
+    </div>
+    <div class="contact-no">
+      <i class="fa-solid fa-address-book fa-2x"></i>
+      <h5>Contact Us</h5>
+      <p>+91 7007245019</p>
+    </div>
+  </div>
+    <div class="cont-links">
+      <form>
+        <button><i class="fa-brands fa-facebook-f fa-2x"></i></button>
+        <button><i class="fa-brands fa-instagram fa-2x"></i></button>
+        <button><i class="fa-brands fa-github fa-2x"></i></button>
+        <button><i class="fa-brands fa-linkedin-in fa-2x"></i></button>
+        <button><i class="fa-brands fa-twitter fa-2x"></i></button>
+      </form>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block css %}
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+.navbar{
+    width:100%;
+    background-color: black;
+    position: fixed;
+
+}
+.manu{
+    height: 100vh;
+    width:100%;
+    background-color: black;
+
+}
+nav{
+    display: flex;
+    
+    align-items: center;
+    justify-content:space-between;
+    padding-left: 15%;
+    padding-right: 5%;
+    padding-top: 2%;
+
+}
+
+.logo{
+    color: white;
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+span{
+    color: green;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+nav ul li a{
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+nav ul li a:hover{
+    color: green;
+    transition: .6s;
+}
+.btn{
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 30px;
+    transition: transform .4s;
+}
+.btn:hover{
+    transform: scale(1.2);
+}
+.content{
+    position: absolute;
+    top:50%;
+    left: 8%;
+    transform: translateY(-50%);
+    margin: 0px 0px 0px 380px;
+}
+.content h1{
+    color: white;
+    margin: 20px 0px 20px;
+    font-size: 75px;
+}
+.content h3{
+    color: white;
+    font-size: 25px;
+    margin:0px 0px 50px 25px;
+
+}
+.content h4{
+    color:green;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 0px 0px 0px 100px;
+}
+.content .newslatter form{
+    width: 450px;
+    max-width: 100%;
+    position: relative;
+}
+.content .newslatter form input:first-child{
+    display: inline-block;
+    width: 100%;
+    padding: 14px 130px 14px 15px;
+    border: 2px solid green;
+    outline: none;
+    border-radius: 30px;
+}
+.content .newslatter form input:last-child{
+    position: absolute;
+    display: inline-block;
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background-color: green;
+    color: white;
+    box-shadow: 0px 0px 5px #000,0px 0px 15px #858585;
+    top: 6px;
+    right: 6px;
+}
+.links{
+    position: absolute;
+    top:48%;
+    left: 8%;
+    transform: translateY(420%);
+    justify-content:space-between;
+    margin: 0px 0px 0px 378px;
+}
+.links form button{
+    font-size: 26px;
+    margin-right: 25px;
+    padding: 12px 20px;
+    border-radius: 100%;
+    background-color: black;
+}
+
+.about{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #191919;
+}
+.about .about-head {
+    margin: 25px 550px;
+}
+.about .about-head h5{
+    margin: 0px 100px;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 14px;
+    letter-spacing: 5px;
+}
+.about .about-head p{
+    color: #fcfc;
+    font-size: 25px;
+    margin-bottom: 14px;
+    letter-spacing: 3px;
+}
+.about-image{
+    display: flex;
+}
+.about-image .image img{
+    width: 140px;
+    border-radius: 50%;
+    margin: 25px 100px;
+}
+.about-image .image-text p{
+    color: white;
+    letter-spacing: 3px;
+    margin: 70px -25px;
+}
+
+.about-text{
+    width: 500px;
+   
+}
+.main{
+    width: 1800px;
+    max-width: 95%;
+    margin: 0px;
+    display: flex;
+    
+    justify-content: space-around;
+}
+
+.about-text h5{
+    color: white;
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    letter-spacing: 5px;
+}
+.about-text h6{
+    color: white;
+    font-size: 16px;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    letter-spacing: 5px;
+}
+.about-text p{
+    color: #fcfc;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 15px;
+    margin-bottom: 45px;
+}
+.about-text p a{
+    text-decoration: none;
+    color: #fcfc;
+    transition: .4s;
+}
+.about-text p a:hover{
+    cursor: pointer;
+    color: green;
+
+}
+hr{
+    margin-bottom: 25px;
+}
+.download-btn{
+    margin: 0px 650px;
+}
+button{
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s;
+}
+button:hover{
+    background-color: transparent;
+    border: 2px solid green;
+    cursor: pointer;
+}
+.resume{
+    width: 100%;
+    padding: 90px 0px;
+    background-color: black;
+}
+.resume .title h2{
+    color: white;
+    margin: 0px 680px;
+    letter-spacing: 3px;
+    font-size: 25px;
+}
+.resume .title p{
+    color: white;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 10px 610px;
+}
+.resume .resume-head h5{
+    color: white;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin: 30px 700px;
+}
+.resume .box{
+    display: flex;
+    margin-top: 75px;
+}
+.resume .box .edu-name{
+    color: white;
+    margin:10px 30px 0px 270px ;
+}
+.resume .box .edu-name h6{
+    font-size: 20px;
+}
+.resume .box .edu-name p{
+    font-size: 16px;
+    margin-bottom: 125px;
+
+}
+.resume .box .edu-icon .vl{
+     border-left:6px solid white;
+     height: 100px;
+     margin: 5px 23px;
+     border-radius: 25%;
+}
+.resume .box .edu-icon .fa-school{
+     background-color: green ;
+     padding: 15px;
+     color: white;
+     border-radius: 50%;
+}
+.resume .box .edu-details{
+   color: white;
+   margin-left: 30px;
+   margin-top: 10px;
+}
+.resume .box .edu-details h6{
+   font-size: 20px;
+   margin-bottom: 10px;
+}
+.resume .box .edu-details p{
+   font-size: 16px;
+   margin-bottom: 90px;
+}
+.resume .box .edu-details hr{
+  width:75px;
+}
+.portfolio{
+    width: 100%;
+    padding: 90px 0px;
+    background-color: #191919;
+}
+.portfolio .port-title{
+    margin: 10px 0px 50px 380px;
+}
+.portfolio .port-title h5{
+    font-size: 30px;
+    color: white;
+    margin: 0px 0px 20px 265px;
+
+}
+.portfolio .port-title h6{
+    font-size: 20px;
+    color: white;
+    margin: 0px 0px 20px 200px;
+}
+
+.portfolio .port-title p{
+    font-size: 15px;
+    color: white;
+    letter-spacing: 2px;
+}
+.portfolio .port-project{
+    display: flex;
+}
+.portfolio .port-project .row-first{
+    width: 650px;
+    height: auto;
+    margin: 0px 60px;
+}
+.portfolio .port-project .row-first img{
+    width: 650px;
+}
+.portfolio .port-project .row-second{
+    width: 650px;
+    height: auto;
+}
+.portfolio .port-project .row-second img{
+    width: 650px;
+}
+.contact{
+    width: 100%;
+    padding: 90px 0px;
+    background-color: black;
+}
+.contact .cont-title{
+    margin: 10px 0px 50px 380px;
+}
+.contact .cont-title h4{
+    font-size: 30px;
+    color: white;
+    margin: 0px 0px 20px 265px;
+}
+.contact .cont-title h6{
+    font-size: 20px;
+    color: white;
+    margin: 0px 0px 20px 200px;
+}
+.contact .cont-title p{
+    font-size: 15px;
+    color: white;
+    letter-spacing: 2px;
+    margin-left: 230px;
+}
+.contact .cont-form{
+   margin-left: 480px;
+}
+.contact .cont-form form #name{
+   width: 500px;
+   border-bottom: 2px solid white;
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   background-color: black;
+   height: 50px;
+   margin-bottom: 10px;
+   color: white;
+}
+.contact .cont-form form #email{
+    width: 500px;
+    border-bottom: 2px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: black;
+    height: 50px;
+    color: white;
+    margin-bottom: 10px;
+ }
+ .contact .cont-form form #subject{
+    width: 500px;
+    border-bottom: 2px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: black;
+    height: 50px;
+    color: white;
+    margin-bottom: 10px;
+ }
+ .contact .cont-form form #message{
+    width: 500px;
+    border-bottom: 2px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: black;
+    height: 70px;
+    margin-bottom: 15px;
+    color: white;
+    
+ }
+ .contact .cont-form form #submit{
+    width: 500px;
+    background-color: red;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    border-radius: 10px;
+ }
+ .contact .cont-detales{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+ }
+ .contact .cont-detales .location{
+    color: white;
+    width: 250px;
+ }
+ .contact .cont-detales .location .fa-location{
+    padding: 15px;   
+    margin-left: 60px;
+ }
+ .contact .cont-detales .location h5{
+     font-size: 20px;
+     margin-bottom: 15px;
+     margin-left: 40px;
+     color: green;
+     letter-spacing: 3px;
+ }
+ .contact .cont-detales .location p{
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 25px;
+ }
+ .contact .cont-detales .email{
+   color: white;
+   width: 250px;
+ }
+ .contact .cont-detales .email .fa-envelope{
+    padding: 15px; 
+    margin-left: 75px;
+   
+ }
+ .contact .cont-detales .email h5{
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    color: green;
+    letter-spacing: 3px;
+}
+.contact .cont-detales .email p{
+   font-size: 15px;
+   letter-spacing: 1px;
+   line-height: 25px;
+}
+ .contact .cont-detales .contact-no{
+   color:white;
+   width: 250px;
+ }
+.contact .cont-detales .contact-no .fa-address-book{
+    padding: 15px; 
+    margin-left: 30px;
+}
+.contact .cont-detales .contact-no h5{
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: green;
+    letter-spacing: 3px;
+}
+.contact .cont-detales .contact-no p{
+   font-size: 15px;
+   letter-spacing: 1px;
+   line-height: 25px;
+}
+.contact .cont-links{
+    margin-top: 100px;
+}
+.contact .cont-links form button{
+     margin-left: 160px;
+     color: white;
+     background-color: black;
+}
+</style>
+    
+{% endblock %}
+    
